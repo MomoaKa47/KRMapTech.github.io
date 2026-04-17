@@ -326,3 +326,65 @@ footer { padding: 40px; text-align: center; color: #444; font-size: 12px; border
     .info-card { height: 180px; }
 }
 
+/* --- FIX DÉBORDEMENT MENU MOBILE --- */
+@media (max-width: 800px) {
+    .top-bar {
+        height: auto !important;
+        flex-direction: column !important;
+        padding: 15px 10px !important; /* Ajout d'un petit padding interne */
+        background: rgba(0, 0, 0, 0.8) !important;
+        backdrop-filter: blur(15px) !important;
+        width: 100% !important;
+        left: 0 !important;
+    }
+
+    .logo-container, .language-selector, nav {
+        position: static !important;
+        margin: 5px 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    /* FIX DU MENU QUI SORT : On autorise le passage à la ligne */
+    nav ul {
+        display: flex !important;
+        flex-wrap: wrap !important; /* Permet aux boutons de descendre s'ils n'ont plus de place */
+        justify-content: center !important;
+        gap: 10px 15px !important; /* 10px d'espace entre les lignes, 15px entre les mots */
+        padding: 10px !important;
+        width: 100% !important;
+        max-width: 100vw !important; /* Interdit de dépasser la largeur de l'écran */
+    }
+
+    nav ul li {
+        display: inline-block !important;
+    }
+
+    /* On réduit un peu la taille de la police sur mobile pour que ça tienne mieux */
+    nav ul li a {
+        font-size: 11px !important;
+        white-space: nowrap !important; /* Évite qu'un mot comme "VEDI TUTTO" se coupe en deux */
+    }
+
+    .hero-title {
+        font-size: 1.8rem !important;
+        padding: 0 15px !important;
+        word-wrap: break-word !important;
+    }
+
+    .services-container {
+        flex-direction: column !important;
+        padding: 0 20px !important;
+        gap: 20px !important;
+    }
+
+    .tech-card {
+        width: 100% !important;
+    }
+
+    .trust-bar {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+}
