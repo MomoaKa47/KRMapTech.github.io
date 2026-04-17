@@ -1,0 +1,328 @@
+/* --- CONFIGURATION & POLICES --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', sans-serif; /* Plus lisible pour le texte */
+    background-color: #0a0a0a;
+    color: #eee;
+    overflow-x: hidden;
+}
+
+/* --- NAVIGATION --- */
+.top-bar {
+    position: fixed; top: 0; width: 100%; height: 90px;
+    background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(15px);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 2000; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.logo-container { position: absolute; left: 40px; height: 90px; }
+.logo-img { height: 100%; }
+nav ul { display: flex; list-style: none; gap: 25px; }
+nav ul li a { 
+    text-decoration: none; color: #fff; font-size: 13px; font-weight: 700; 
+    letter-spacing: 1px; transition: 0.3s;
+}
+.btn-nav-active { color: #5da3bb !important; }
+
+.language-selector { position: absolute; right: 40px; display: flex; gap: 10px; }
+.lang-btn { text-decoration: none; color: #888; font-size: 11px; font-weight: 700; display: flex; align-items: center; gap: 5px; }
+.lang-btn.active { color: #fff; }
+.mini-flag { width: 16px; }
+
+/* --- HERO SECTION AVEC IMAGE --- */
+.hero-visual {
+    position: relative;
+    height: 85vh;
+    width: 100%;
+    background: url('golf8r2.jpg') no-repeat center center/cover;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding-top: 90px;
+}
+
+.hero-visual-seeAll {
+    position: relative;
+    height: 85vh;
+    width: 100%;
+    background: url('interior.jpg') no-repeat center center/cover;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding-top: 90px;
+}
+
+/* Image de fond spécifique pour la page Servizi In Arrivo */
+.hero-visual-service {
+    position: relative;
+    height: 85vh;
+    width: 100%;
+    background: url('closeInterior.jpg') no-repeat center center/cover;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding-top: 90px;
+}
+
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%);
+}
+.hero-content { position: relative; z-index: 10; max-width: 900px; padding: 20px; }
+
+.example-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-left: 4px solid #5da3bb;
+    padding: 20px; width: fit-content; margin: 0 auto 30px;
+    text-align: left; border-radius: 4px;
+}
+.car-model { font-family: 'Orbitron'; font-weight: 900; color: #fff; display: block; }
+.stats strong { color: #5da3bb; }
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif; font-size: 3.2rem; line-height: 1.1;
+    margin-bottom: 20px; color: #fff; text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.hero-subtitle { font-size: 1.2rem; color: #ccc; margin-bottom: 40px; }
+
+.main-cta {
+    text-decoration: none; background: #5da3bb; color: #000;
+    padding: 18px 45px; font-weight: 800; border-radius: 4px;
+    font-size: 14px; text-transform: uppercase; transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(93, 163, 187, 0.4);
+}
+.main-cta:hover { transform: scale(1.05); background: #fff; }
+
+/* --- TRUST BAR --- */
+.trust-bar {
+    background: #111; display: flex; justify-content: space-around;
+    padding: 30px 10%; border-bottom: 1px solid #222;
+}
+.trust-item { display: flex; align-items: center; gap: 15px; color: #888; font-size: 13px; font-weight: 700; }
+.trust-item i { color: #5da3bb; font-size: 20px; }
+
+/* --- SERVICES --- */
+.services-wrapper { padding: 80px 20px; display: flex; justify-content: center; }
+.services-container { display: flex; gap: 30px; max-width: 1200px; width: 100%; }
+
+.tech-card {
+    background: #161616; border: 1px solid #222; padding: 40px 30px;
+    flex: 1; border-radius: 8px; position: relative; overflow: hidden;
+    text-align: center; transition: 0.3s;
+}
+.tech-card:hover { border-color: #5da3bb; transform: translateY(-10px); }
+.tech-card h3 { font-family: 'Orbitron'; margin-bottom: 15px; font-size: 1.2rem; }
+.tech-card p { font-size: 14px; color: #888; margin-bottom: 20px; }
+
+.card-glow { position: absolute; width: 150px; height: 150px; background: rgba(93, 163, 187, 0.1); filter: blur(50px); z-index: 0; }
+.bottom-left { bottom: -50px; left: -50px; }
+.top-right { top: -50px; right: -50px; }
+
+.card-btn {
+    text-decoration: none; color: #5da3bb; border: 1px solid #5da3bb;
+    padding: 10px 25px; font-size: 11px; font-weight: 700; transition: 0.3s;
+}
+.card-btn:hover { background: #5da3bb; color: #000; }
+
+.disabled { opacity: 0.5; filter: grayscale(1); }
+.status-badge { display: block; margin-top: 15px; font-size: 10px; color: #5da3bb; border: 1px dashed #5da3bb; padding: 5px; }
+
+footer { padding: 40px; text-align: center; color: #444; font-size: 12px; border-top: 1px solid #111; }
+
+/* --- CONTACT SPECIFIC STYLE --- */
+
+.contact-hero {
+    position: relative;
+    height: 40vh; /* Più bassa rispetto alla home */
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('golf8screen.png') no-repeat center center/cover;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding-top: 90px;
+}
+
+.social-wrapper {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    background: #0a0a0a;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.social-card {
+    background: #161616;
+    border: 1px solid #222;
+    padding: 40px 20px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: #eee;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-card:hover {
+    border-color: #5da3bb;
+    transform: translateY(-10px);
+    background: #1c1c1c;
+}
+
+.social-card .icon-box {
+    font-size: 30px;
+    color: #5da3bb;
+    margin-bottom: 20px;
+}
+
+.social-card h3 {
+    font-family: 'Orbitron';
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.social-card p {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.social-link {
+    font-size: 12px;
+    font-weight: 700;
+    color: #5da3bb;
+    text-transform: lowercase;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.social-card:hover .social-link {
+    border-bottom: 1px solid #5da3bb;
+}
+
+.special-mail {
+    grid-column: span 1; /* Di default occupa uno spazio */
+}
+
+/* Effetto speciale per l'email se vuoi farla risaltare */
+@media (min-width: 992px) {
+    .social-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 2rem; }
+    .social-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* --- VEDI TUTTO STYLE --- */
+
+.page-header {
+    padding: 140px 20px 40px;
+    text-align: center;
+    background: linear-gradient(to bottom, #111, #0a0a0a);
+}
+
+.section-label {
+    font-family: 'Orbitron';
+    color: #5da3bb;
+    font-size: 1.5rem;
+    margin: 40px 0 20px;
+    padding-left: 10px;
+    border-left: 4px solid #5da3bb;
+}
+
+.all-services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    background: #161616;
+    border: 1px solid #222;
+    height: 200px;
+    position: relative;
+    overflow: hidden; /* Importante per nascondere l'overlay */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.info-card:hover {
+    border-color: #5da3bb;
+}
+
+.card-content {
+    text-align: center;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.card-content i {
+    font-size: 2.5rem;
+    color: #5da3bb;
+    margin-bottom: 15px;
+}
+
+.card-content h3 {
+    font-family: 'Orbitron';
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.short-desc {
+    font-size: 13px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* --- OVERLAY CHE APPARE AL HOVER --- */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(93, 163, 187, 0.95); /* Colore azzurro KR */
+    color: #000;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    transform: translateY(101%); /* Nasconde sotto la card */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info-card:hover .card-overlay {
+    transform: translateY(0); /* Sale sopra */
+}
+
+.info-card:hover .card-content {
+    filter: blur(5px);
+    opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .info-card { height: 180px; }
+}
+
